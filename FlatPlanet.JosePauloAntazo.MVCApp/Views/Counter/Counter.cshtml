@@ -1,0 +1,19 @@
+﻿@model FlatPlanet.JosePauloAntazo.MVCApp.ViewModel.CounterViewModel
+
+@{
+    ViewBag.Title = "Counter";
+}
+
+<h2>Counter</h2>
+
+@*@using (Html.BeginForm("Counter", "Counter", FormMethod.Post))*@
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.Count, new { @name = "Count" })
+    <div class="jumbotron text-center">
+        <h1>@Html.DisplayFor(Model => Model.Count)</h1>
+    </div>
+    @Html.ValidationSummary()
+    <br />
+    <input type="submit" value="Submit" class="btn-primary" />
+}
